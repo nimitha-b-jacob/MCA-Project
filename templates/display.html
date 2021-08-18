@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+  />
+
+  <head>
+    <title>Prediction</title>
+  </head>
+  <body>
+    <div style="height: 100vh; margin: 0; padding: 0; top: 0">
+      <div style="height: 100px; background-color: #0c0f38"></div>
+      <div
+        class="images"
+        style="
+          padding-top: 50px;
+          padding-bottom: 50px;
+          display: flex;
+          justify-content: center;
+        "
+      >
+        <img name="image1" src="{{ image1 }}" alt="Damaged" />
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+          "
+        >
+          <a href="{{image2}}" download>
+            <!-- <img name="image2" src="{{ image2 }}" alt="Damaged" /> -->
+            <button type="button" class="btn btn-primary">Click to View</button>
+          </a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; padding-bottom: 50px">
+        <label for="place">Wood type:</label>
+        <input type="text" id="fname" name="wood_type" value="{{wood_type}}" />
+      </div>
+      <p
+        id="dicription"
+        style="
+          color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      ></p>
+      <div
+        style="
+          height: 500px;
+          background-color: #0c0f38;
+          bottom: 0;
+          display: flex;
+        "
+      ></div>
+    </div>
+    <script>
+      var value = document.getElementById("fname").value;
+
+      if (value === "The wood has knots:") {
+        document.getElementById("dicription").innerHTML =
+          "The solution is to fill the wood knots with epoxy.";
+      }
+      if (value === "The wood has crack:") {
+        document.getElementById("dicription").innerHTML =
+          "Cracks in wooden structures can be filled with adhesives or with thermoplastic composite material.";
+      }
+    </script>
+  </body>
+</html>
